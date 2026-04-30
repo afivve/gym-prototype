@@ -62,12 +62,15 @@ export default function RegisterPage() {
         </div>
         <div className="space-y-4">
           <p className="text-4xl font-bold leading-tight tracking-tight">
-            Mulai perjalanan<br />
-            fitness Anda.<br />
+            Mulai perjalanan
+            <br />
+            fitness Anda.
+            <br />
             <span className="text-primary">Hari ini.</span>
           </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-sm">
-            Bergabung dengan ribuan member yang sudah mempercayakan manajemen gym mereka ke GymPro.
+            Bergabung dengan ribuan member yang sudah mempercayakan manajemen
+            gym mereka ke GymPro.
           </p>
         </div>
         <p className="text-xs text-muted-foreground/60">
@@ -87,8 +90,12 @@ export default function RegisterPage() {
           </div>
 
           <div className="space-y-1">
-            <h1 className="text-2xl font-bold tracking-tight">Buat akun baru</h1>
-            <p className="text-sm text-muted-foreground">Daftar dan mulai perjalanan fitness Anda</p>
+            <h1 className="text-2xl font-bold tracking-tight">
+              Buat akun baru
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              Daftar dan mulai perjalanan fitness Anda
+            </p>
           </div>
 
           <Form {...form}>
@@ -98,9 +105,15 @@ export default function RegisterPage() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium text-foreground">Nama Lengkap</FormLabel>
+                    <FormLabel className="text-sm font-medium text-foreground">
+                      Nama Lengkap
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" autoComplete="name" {...field} />
+                      <Input
+                        placeholder="John Doe"
+                        autoComplete="name"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -111,9 +124,16 @@ export default function RegisterPage() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium text-foreground">Email</FormLabel>
+                    <FormLabel className="text-sm font-medium text-foreground">
+                      Email
+                    </FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="email@example.com" autoComplete="email" {...field} />
+                      <Input
+                        type="email"
+                        placeholder="email@example.com"
+                        autoComplete="email"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -124,9 +144,16 @@ export default function RegisterPage() {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium text-foreground">No HP</FormLabel>
+                    <FormLabel className="text-sm font-medium text-foreground">
+                      No HP
+                    </FormLabel>
                     <FormControl>
-                      <Input type="tel" placeholder="08123456789" autoComplete="tel" {...field} />
+                      <Input
+                        type="tel"
+                        placeholder="08123456789"
+                        autoComplete="tel"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -138,114 +165,13 @@ export default function RegisterPage() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">Password</FormLabel>
-                      <FormControl>
-                        <Input type="password" placeholder="Min. 8 karakter" autoComplete="new-password" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="confirmPassword"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">Konfirmasi</FormLabel>
-                      <FormControl>
-                        <Input type="password" placeholder="Ulangi password" autoComplete="new-password" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <Button type="submit" className="w-full" size="lg" disabled={form.formState.isSubmitting}>
-                <UserPlus className="h-4 w-4 mr-2" />
-                Buat Akun
-              </Button>
-            </form>
-          </Form>
-
-          <p className="text-center text-sm text-muted-foreground">
-            Sudah punya akun?{" "}
-            <Link href="/login" className="font-medium text-primary hover:underline">
-              Masuk sekarang
-            </Link>
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-4"
-              >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Nama Lengkap</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="John Doe"
-                          autoComplete="name"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="email@example.com"
-                          autoComplete="email"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>No HP</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="tel"
-                          placeholder="08123456789"
-                          autoComplete="tel"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel className="text-sm font-medium text-foreground">
+                        Password
+                      </FormLabel>
                       <FormControl>
                         <Input
                           type="password"
-                          placeholder="Minimal 8 karakter"
+                          placeholder="Min. 8 karakter"
                           autoComplete="new-password"
                           {...field}
                         />
@@ -259,7 +185,9 @@ export default function RegisterPage() {
                   name="confirmPassword"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Konfirmasi Password</FormLabel>
+                      <FormLabel className="text-sm font-medium text-foreground">
+                        Konfirmasi
+                      </FormLabel>
                       <FormControl>
                         <Input
                           type="password"
@@ -272,29 +200,29 @@ export default function RegisterPage() {
                     </FormItem>
                   )}
                 />
-                <Button
-                  type="submit"
-                  className="w-full gap-2"
-                  disabled={form.formState.isSubmitting}
-                >
-                  <UserPlus className="h-4 w-4" />
-                  Daftar Sekarang
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-          <CardFooter>
-            <p className="text-sm text-muted-foreground">
-              Sudah punya akun?{" "}
-              <Link
-                href="/login"
-                className="font-medium text-primary hover:underline"
+              </div>
+              <Button
+                type="submit"
+                className="w-full"
+                size="lg"
+                disabled={form.formState.isSubmitting}
               >
-                Masuk
-              </Link>
-            </p>
-          </CardFooter>
-        </Card>
+                <UserPlus className="h-4 w-4 mr-2" />
+                Buat Akun
+              </Button>
+            </form>
+          </Form>
+
+          <p className="text-center text-sm text-muted-foreground">
+            Sudah punya akun?{" "}
+            <Link
+              href="/login"
+              className="font-medium text-primary hover:underline"
+            >
+              Masuk sekarang
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
