@@ -3,8 +3,13 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/auth-context";
+import { MemberSidebar } from "@/components/layout/member-sidebar";
 
-export default function HomePage() {
+export default function MemberLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const { currentUser, isLoading } = useAuth();
   const router = useRouter();
 
@@ -14,17 +19,25 @@ export default function HomePage() {
       router.replace("/login");
     } else if (currentUser.role === "admin") {
       router.replace("/admin");
-    } else {
-      router.replace("/dashboard");
     }
   }, [currentUser, isLoading, router]);
 
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-3">
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-        <p className="text-sm text-muted-foreground">Memuat...</p>
       </div>
+    );
+  }
+
+  if (!currentUser || currentUser.role !== "member") return null;
+
+  return (
+    <div className="flex min-h-screen bg-background">
+      <MemberSidebar />
+      <main className="flex-1 lg:pl-64">
+        <div className="pt-16 lg:pt-0">{children}</div>
+      </main>
     </div>
   );
 }
