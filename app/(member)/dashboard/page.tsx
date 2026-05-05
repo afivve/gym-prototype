@@ -9,6 +9,10 @@ import {
   Clock,
   TrendingUp,
   Calendar,
+  UserCircle,
+  Camera,
+  ClipboardList,
+  CalendarCheck,
 } from "lucide-react";
 import { useAuth } from "@/contexts/auth-context";
 import { useApp } from "@/contexts/app-context";
@@ -102,6 +106,38 @@ export default function DashboardPage() {
               day: "numeric",
             })}
           </p>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <Button asChild variant="outline" size="sm" className="gap-2">
+            <Link href="/workouts/new">
+              <ClipboardList className="h-4 w-4" />
+              Workout
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="sm" className="gap-2">
+            <Link href="/progress">
+              <TrendingUp className="h-4 w-4" />
+              Progress
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="sm" className="gap-2">
+            <Link href="/progress-photos">
+              <Camera className="h-4 w-4" />
+              Foto
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="sm" className="gap-2">
+            <Link href="/consistency">
+              <CalendarCheck className="h-4 w-4" />
+              Konsistensi
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="sm" className="gap-2">
+            <Link href="/profile">
+              <UserCircle className="h-4 w-4" />
+              Profil Saya
+            </Link>
+          </Button>
         </div>
       </div>
 

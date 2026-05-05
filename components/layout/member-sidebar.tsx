@@ -8,6 +8,13 @@ import {
   CreditCard,
   QrCode,
   Dumbbell,
+  UserCircle,
+  TrendingUp,
+  Camera,
+  ClipboardList,
+  CalendarCheck,
+  UserSquare2,
+  CalendarDays,
   LogOut,
   Menu,
   X,
@@ -23,6 +30,13 @@ const navItems = [
   { href: "/membership", label: "Membership", icon: CreditCard },
   { href: "/checkin", label: "QR Check-in", icon: QrCode },
   { href: "/classes", label: "Booking Kelas", icon: Dumbbell },
+  { href: "/trainers", label: "Personal Trainer", icon: UserSquare2 },
+  { href: "/pt-sessions", label: "Sesi PT", icon: CalendarDays },
+  { href: "/workouts", label: "Log Workout", icon: ClipboardList },
+  { href: "/consistency", label: "Konsistensi", icon: CalendarCheck },
+  { href: "/progress", label: "Progress", icon: TrendingUp },
+  { href: "/progress-photos", label: "Foto Progress", icon: Camera },
+  { href: "/profile", label: "Profil Fitness", icon: UserCircle },
 ];
 
 export function MemberSidebar() {

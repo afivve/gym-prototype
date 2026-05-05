@@ -8,6 +8,9 @@ import {
   Users,
   QrCode,
   BookOpen,
+  UserSquare2,
+  CalendarDays,
+  Wrench,
   LogOut,
   Menu,
   X,
@@ -23,6 +26,12 @@ const adminNavItems = [
   { href: "/admin/members", label: "Data Member", icon: Users },
   { href: "/admin/checkins", label: "Log Check-in", icon: QrCode },
   { href: "/admin/bookings", label: "Booking Kelas", icon: BookOpen },
+];
+
+const adminServiceItems = [
+  { href: "/admin/trainers", label: "Personal Trainer", icon: UserSquare2 },
+  { href: "/admin/pt-sessions", label: "Sesi PT", icon: CalendarDays },
+  { href: "/admin/maintenance", label: "Maintenance", icon: Wrench },
 ];
 
 export function AdminSidebar() {
@@ -64,6 +73,30 @@ export function AdminSidebar() {
           const isActive = item.exact
             ? pathname === item.href
             : pathname.startsWith(item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
+              className={cn(
+                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150",
+                isActive
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:bg-accent hover:text-foreground",
+              )}
+            >
+              <Icon className="h-4.5 w-4.5 shrink-0" />
+              {item.label}
+            </Link>
+          );
+        })}
+
+        <p className="px-2 pb-2 pt-4 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+          Layanan
+        </p>
+        {adminServiceItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = pathname.startsWith(item.href);
           return (
             <Link
               key={item.href}
